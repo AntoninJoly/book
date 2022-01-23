@@ -38,6 +38,26 @@ services:
      # - ELASTICSEARCH_PASSWORD=es_pw
     networks:
      - elastic
+
+  # logstash:
+  #   build:
+  #     context: logstash/
+  #     args:
+  #       ELK_VERSION: $ELK_VERSION
+  #   volumes:
+  #     - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,z
+  #     - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,z
+  #   ports:
+  #     - "5044:5044"
+  #     - "5000:5000/tcp"
+  #     - "5000:5000/udp"
+  #     - "9600:9600"
+  #   environment:
+  #     LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+  #   networks:
+  #     - elastic
+  #   depends_on:
+  #     - es01
   
 volumes:
   es_data01:

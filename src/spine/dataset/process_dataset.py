@@ -9,7 +9,7 @@ import io
 from tqdm import tqdm
 
 def process_json_to_img(base_dir, seed=0, path=None):
-
+    
     try:
         json_list = [i for i in os.listdir(os.path.join(base_dir)) if os.path.splitext(os.path.basename(i))[1]=='.json']
         json_path = json_list[seed] if path==None else path
