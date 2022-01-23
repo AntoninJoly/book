@@ -1,3 +1,9 @@
 
 *.csv
 *.json
+notebook/search/.ipynb_checkpoints/elasticsearch_typo_offline-checkpoint.ipynb
+notebook/search/.ipynb_checkpoints/elasticsearch_book_query-checkpoint.ipynb
+notebook/spine/.ipynb_checkpoints/vis_img_vertices-checkpoint.ipynb
+notebook/spine/.ipynb_checkpoints/train-checkpoint.ipynb
+*.pyc
+*.pyc
