@@ -9,3 +9,4 @@ notebook/spine/.ipynb_checkpoints/train-checkpoint.ipynb
 *.pyc
 notebook/search/.ipynb_checkpoints/elasticsearch_book_query_offline_implementation_test-checkpoint.ipynb
 notebook/search/.ipynb_checkpoints/elasticsearch_typo_offline_implementation_test-checkpoint.ipynb
+notebook/search/.ipynb_checkpoints/book_classifier-checkpoint.ipynb
