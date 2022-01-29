@@ -1,14 +1,15 @@
 version: '3.3'
 services:
   es01:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
+    # image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
+    build:
+      context: elasticsearch/
+      dockerfile: Dockerfile
     container_name: es01
     environment:
       - node.name=es01
       - cluster.name=es-cluster
       - discovery.type=single-node
-      # - discovery.seed_hosts=es02,es03
-      # - cluster.initial_master_nodes=es01,es02,es03
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       # - xpack.security.enabled=true
@@ -25,10 +26,14 @@ services:
       - 9200:9200
     networks:
       - elastic
+  
   kibana:
     depends_on:
      - es01
-    image: "docker.elastic.co/kibana/kibana:7.1.0"
+    # image: "docker.elastic.co/kibana/kibana:7.1.0"
+    build:
+      context: kibana/
+      dockerfile: Dockerfile
     ports:
      - "5601:5601"
     environment:
@@ -39,25 +44,26 @@ services:
     networks:
      - elastic
 
-  # logstash:
-  #   build:
-  #     context: logstash/
-  #     args:
-  #       ELK_VERSION: $ELK_VERSION
-  #   volumes:
-  #     - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,z
-  #     - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,z
-  #   ports:
-  #     - "5044:5044"
-  #     - "5000:5000/tcp"
-  #     - "5000:5000/udp"
-  #     - "9600:9600"
-  #   environment:
-  #     LS_JAVA_OPTS: "-Xmx256m -Xms256m"
-  #   networks:
-  #     - elastic
-  #   depends_on:
-  #     - es01
+  logstash:
+    build:
+      context: logstash/
+      dockerfile: Dockerfile
+      args:
+        ELK_VERSION: $ELK_VERSION
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,z
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,z
+    ports:
+      - "5044:5044"
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - elastic
+    depends_on:
+      - es01
   
 volumes:
   es_data01:
