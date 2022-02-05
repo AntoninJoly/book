@@ -1,5 +1,13 @@
 # Book recommendation
 
+Tools / concepts used in this projects are:
+- Elastic stack (elasticsearch & kibana) via docker.
+- Fasttext for query classification.
+- Nearest neighbours clustering for recommendation cold start.
+- Graph neural network for customized recommendations.
+- Web scraping and parsing using beautifulsoup for data creation and data augmentation.
+- RetinaNet adapted to rotated bboxes (under development).q
+
 Flowchart
 ![](./assets/flowchart.drawio.svg)
 
@@ -36,7 +44,7 @@ Object detection framework is modified retinanet to acccept rotated bounding box
 
 Can be downloaded ![here](https://www.kaggle.com/arashnic/book-recommendation-dataset)
 
-Since I was missing some infomration, I used web scraping to retrieve book genres. Airflow.
+Since I was missing some information, I used web scraping to retrieve book genres. Airflow.
 
 ### Book spine
 Roughly annotated book spine data (contains ~ 650 datapoint).
