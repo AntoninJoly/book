@@ -34,7 +34,7 @@ Object detection framework is modified retinanet to acccept rotated bounding box
 
 Can be downloaded ![here](https://www.kaggle.com/arashnic/book-recommendation-dataset)
 
-Since I was missing some information, I used web scraping to retrieve book genres. Airflow.
+Since I was missing some information, I used web scraping to retrieve book genres.
 
 ### Book spine
 Roughly annotated book spine data (contains ~ 650 datapoint).
