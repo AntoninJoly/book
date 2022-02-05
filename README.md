@@ -13,22 +13,12 @@ Flowchart
 
 # Search engine
 
-Elasticsearch is a RESTful distributed search engine. It is Java-based and can search and index document files in diverse formats.
-
-**Elasticsearch** is a distributed, RESTful search and analytics engine capable of
-solving a growing number of use cases. As the heart of the Elastic Stack, it
-centrally stores your data so you can discover the expected and uncover the
-unexpected.
-
-**Kibana** lets you visualize your Elasticsearch data and navigate the Elastic Stack, 
-so you can do anything from learning why you're getting paged at 2:00 a.m. to 
-understanding the impact rain might have on your quarterly numbers.
-
-**Logstash** is a server-side data processing pipeline that ingests data from a
-multitude of sources simultaneously, transforms it, and then sends it to your
-favorite "stash." 
+**Elasticsearch** is a distributed, RESTful search and analytics engine capable of solving a growing number of use cases. **Kibana** lets you visualize your Elasticsearch data and navigate the Elastic Stack.
 
 # Recommendation engine
+
+Two approaches are envisaged for recommending book to users. Their use depend on whether or not we have information about user and their reading history.
+For no priror knowledge, similarity search and popularity recommendations are considered using clustering. For known hostory, graph neural network inference is considered. 
 
 # Spine_segmentation
 
